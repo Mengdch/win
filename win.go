@@ -79,9 +79,12 @@ func MAKEINTRESOURCE(id uintptr) *uint16 {
 	return (*uint16)(unsafe.Pointer(id))
 }
 
+func BOOL2Bool(value BOOL) bool {
+	return value == TRUE
+}
 func BoolToBOOL(value bool) BOOL {
 	if value {
-		return 1
+		return TRUE
 	}
 
 	return 0
